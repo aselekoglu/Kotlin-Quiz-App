@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.recycler_row.view.*
 
-class QuizListRecyclerAdapter(val quizList: ArrayList<Quiz>) :
+class QuizListRecyclerAdapter(private val quizList: ArrayList<Quiz>) :
     RecyclerView.Adapter<QuizListRecyclerAdapter.QuizHolder>() {
 
     class QuizHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -29,15 +29,16 @@ class QuizListRecyclerAdapter(val quizList: ArrayList<Quiz>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuizHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_row, parent, false)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.recycler_row, parent, false)
         return QuizHolder(view)
     }
 
     override fun onBindViewHolder(holder: QuizHolder, position: Int) {
-        holder.recyclerQuizNameText?.text = quizList.get(position).title
-        holder.recyclerCreatorNameText?.text = quizList.get(position).creator
-        holder.recyclerDescriptionText?.text = quizList.get(position).description
-        holder.id = quizList.get(position).id
+        holder.recyclerQuizNameText?.text = quizList[position].title
+        holder.recyclerCreatorNameText?.text = quizList[position].creator
+        holder.recyclerDescriptionText?.text = quizList[position].description
+        holder.id = quizList[position].id
 
         holder.goQuiz.setOnClickListener(View.OnClickListener {
             val intent = Intent(it.context, TakeQuizActivity::class.java)
