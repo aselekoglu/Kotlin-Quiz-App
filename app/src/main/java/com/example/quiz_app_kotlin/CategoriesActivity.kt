@@ -46,7 +46,6 @@ class CategoriesActivity : AppCompatActivity() {
                     categoriesList.add(category["title"].toString())
                 }
                 var categoriesListView = findViewById<ListView>(R.id.listViewCategories)
-
                 val adapter =
                     ArrayAdapter(this, android.R.layout.simple_list_item_1, categoriesList)
                 categoriesListView.adapter = adapter
@@ -54,12 +53,10 @@ class CategoriesActivity : AppCompatActivity() {
                 categoriesListView.onItemClickListener =
                     AdapterView.OnItemClickListener { parent, view, position, id ->
                         // send the user to Quiz List
-
                         val intent = Intent(this, QuizListActivity::class.java)
                         intent.putExtra("title", categoriesList.get(position))
                         startActivity(intent)
                     }
-
             }.addOnFailureListener { exception ->
                 Toast.makeText(
                     this@CategoriesActivity,
@@ -68,33 +65,24 @@ class CategoriesActivity : AppCompatActivity() {
                 )
                     .show()
             }
-
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        fun signOut() {
-
-        }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val menuInflater = menuInflater
-        menuInflater.inflate(R.menu.option_menu,menu)
+        menuInflater.inflate(R.menu.option_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.logout){
+        if (item.itemId == R.id.logout) {
             auth.signOut()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
-
         return super.onOptionsItemSelected(item)
     }
-
-
 }

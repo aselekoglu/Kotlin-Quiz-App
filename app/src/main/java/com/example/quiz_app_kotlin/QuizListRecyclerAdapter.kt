@@ -13,7 +13,6 @@ class QuizListRecyclerAdapter(private val quizList: ArrayList<Quiz>) :
     RecyclerView.Adapter<QuizListRecyclerAdapter.QuizHolder>() {
 
     class QuizHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         var recyclerQuizNameText: TextView? = null
         var recyclerCreatorNameText: TextView? = null
         var recyclerDescriptionText: TextView? = null
@@ -44,10 +43,8 @@ class QuizListRecyclerAdapter(private val quizList: ArrayList<Quiz>) :
             val intent = Intent(it.context, TakeQuizActivity::class.java)
             intent.putExtra("quizID", holder.id)
             println(holder.id)
-
             it.context.startActivity(intent)
         })
-
     }
 
     override fun getItemCount(): Int {

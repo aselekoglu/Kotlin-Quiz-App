@@ -22,17 +22,13 @@ class MainActivity : AppCompatActivity() {
 
         val currentUser = auth.currentUser
 
-
         if (currentUser != null) {
             val intent = Intent(this, CategoriesActivity::class.java)
-            intent.putExtra("user",currentUser.email.toString())
+            intent.putExtra("user", currentUser.email.toString())
             startActivity(intent)
             finish()
         }
-
-
     }
-
 
     fun signIn(view: View) {
         val email = emailText.text.toString()
@@ -78,8 +74,6 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this@MainActivity, exception.localizedMessage, Toast.LENGTH_LONG)
                         .show()
                 }
-
-
         } else {
             Toast.makeText(
                 this@MainActivity,
@@ -87,9 +81,5 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             )
         }
-
-
     }
-
-
 }

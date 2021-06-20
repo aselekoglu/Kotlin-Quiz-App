@@ -14,11 +14,9 @@ class TakeQuizActivity : AppCompatActivity() {
     val db = Firebase.firestore
     var questionList = mutableListOf<Question>()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_take_quiz)
-
 
         val intent = intent
 
@@ -31,8 +29,6 @@ class TakeQuizActivity : AppCompatActivity() {
                 var questions = quiz.collection("questions")
 
                 questions.get().addOnSuccessListener { task ->
-
-
 
                     for (document in task.documents) {
                         if (task != null) {
@@ -48,6 +44,7 @@ class TakeQuizActivity : AppCompatActivity() {
 
                     println("Q: $questionList")
 
+                    // for some reason, I couldn't make the adapter work here...
                     var takeQuizAdapter = TakeQuizRecyclerAdapter(questionList)
                     takeQuizRecyclerView.adapter = takeQuizAdapter
 
@@ -62,7 +59,7 @@ class TakeQuizActivity : AppCompatActivity() {
     }
 
     fun optionClicked(view: View) {
-        // when an answer is chosen
+        TODO("To be implemented")
     }
 
 }

@@ -34,7 +34,6 @@ class TakeQuizRecyclerAdapter(var questionList: MutableList<Question>) :
             radioButton2 = itemView.findViewById(R.id.radioButton2)
             radioButton3 = itemView.findViewById(R.id.radioButton3)
             radioButton4 = itemView.findViewById(R.id.radioButton4)
-
         }
 
     }

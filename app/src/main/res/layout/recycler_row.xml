@@ -31,9 +31,9 @@
         android:id="@+id/descriptionTextRecyclerRow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10sp"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a ornare justo. Vivamus vehicula laoreet ligula, nec laoreet augue finibus vel. Aliquam vel consectetur arcu. Nulla quis magna elit. Vivamus a dignissim dui. Vestibulum suscipit odio sit amet risus porttitor, in aliquam velit facilisis. Nam a leo imperdiet, auctor tortor sed, pharetra ex. Nulla commodo odio sed urna placerat, feugiat mollis ipsum commodo. In dapibus id justo et finibus. Nulla ut porttitor magna. Integer eleifend dapibus bibendum. Integer iaculis orci vitae posuere fringilla. Maecenas luctus, nisl non tincidunt tempus, justo tortor convallis dolor, id placerat lorem lacus et sem. Aenean hendrerit a neque suscipit mollis. Donec porta diam et rhoncus varius. Donec finibus nulla id sapien sagittis vulputate sed sed metus."
-        android:textSize="13sp"
-        android:layout_marginHorizontal="10sp"/>
+        android:textSize="13sp" />
 
     <Button
         android:id="@+id/startQuizButton"

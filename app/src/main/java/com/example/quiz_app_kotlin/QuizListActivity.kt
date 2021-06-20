@@ -35,7 +35,6 @@ class QuizListActivity : AppCompatActivity() {
     }
 
     fun getCategoryDetails(categoryTitle: String) {
-
         val category = db.collection("categories").document(categoryTitle)
         category.get().addOnSuccessListener { category ->
             if (category != null) {
@@ -61,7 +60,6 @@ class QuizListActivity : AppCompatActivity() {
                     quiz["title"].toString(),
 //                    quiz["questions"] as ArrayList<Question>
                 )
-
                 if (quizObject != null) {
                     quizList.add(quizObject)
 //                    println("object added")
