@@ -41,7 +41,6 @@ class QuizListActivity : AppCompatActivity() {
             if (category != null) {
                 val quizArray = category["quizzes"] as List<String>
                 println(quizArray + quizArray.size)
-                var i = 0;
                 getQuizDetails(quizArray)
             }
         }.addOnFailureListener { e ->

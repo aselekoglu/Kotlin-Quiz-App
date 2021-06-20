@@ -12,6 +12,22 @@ import kotlinx.android.synthetic.main.recycler_row.view.*
 class QuizListRecyclerAdapter(val quizList: ArrayList<Quiz>) :
     RecyclerView.Adapter<QuizListRecyclerAdapter.QuizHolder>() {
 
+    class QuizHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        var recyclerQuizNameText: TextView? = null
+        var recyclerCreatorNameText: TextView? = null
+        var recyclerDescriptionText: TextView? = null
+        var id: String? = null
+        val goQuiz = itemView.startQuizButton
+
+        init {
+            recyclerQuizNameText = itemView.findViewById(R.id.quizNameTextRecyclerRow)
+            recyclerCreatorNameText = itemView.findViewById(R.id.creatorTextRecyclerRow)
+            recyclerDescriptionText = itemView.findViewById(R.id.descriptionTextRecyclerRow)
+        }
+
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuizHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_row, parent, false)
         return QuizHolder(view)
@@ -29,7 +45,6 @@ class QuizListRecyclerAdapter(val quizList: ArrayList<Quiz>) :
             println(holder.id)
 
             it.context.startActivity(intent)
-
         })
 
     }
@@ -38,20 +53,5 @@ class QuizListRecyclerAdapter(val quizList: ArrayList<Quiz>) :
         return quizList.size
     }
 
-    class QuizHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        var recyclerQuizNameText: TextView? = null
-        var recyclerCreatorNameText: TextView? = null
-        var recyclerDescriptionText: TextView? = null
-        var id: String? = null
-        val goQuiz = itemView.startQuizButton
-
-        init {
-            recyclerQuizNameText = itemView.findViewById(R.id.quizNameTextRecyclerRow)
-            recyclerCreatorNameText = itemView.findViewById(R.id.creatorTextRecyclerRow)
-            recyclerDescriptionText = itemView.findViewById(R.id.descriptionTextRecyclerRow)
-        }
-
-    }
 
 }
